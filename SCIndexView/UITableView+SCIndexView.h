@@ -36,6 +36,14 @@
 // tableView从第几个section开始使用索引 Default = 0
 @property (nonatomic, assign) NSUInteger sc_startSection;
 
+/* tableView初始化时滚动到指定indexPath，更新SCIndexView位置. Default = 0
+ 
+  eg:
+ [_tableView selectRowAtIndexPath:scrollToIndex animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+ _tableView.sc_currentSection = scrollToIndex.section;
+ */
+@property (nonatomic, assign) NSUInteger sc_currentSection;
+
 // 索引视图的配置
 @property (nonatomic, strong) SCIndexViewConfiguration *sc_indexViewConfiguration;
 

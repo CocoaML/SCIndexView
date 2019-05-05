@@ -190,4 +190,16 @@
     self.sc_indexView.startSection = sc_startSection;
 }
 
+- (NSUInteger)sc_currentSection {
+    NSNumber *number = objc_getAssociatedObject(self, @selector(sc_currentSection));
+    return number.unsignedIntegerValue;
+}
+
+- (void)setSc_currentSection:(NSUInteger)sc_currentSection {
+    if (self.sc_currentSection == sc_currentSection) return;
+    
+    objc_setAssociatedObject(self, @selector(sc_currentSection), @(sc_currentSection), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    self.sc_indexView.currentSection = sc_currentSection;
+}
+
 @end
